@@ -4,3 +4,13 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+
+# myth
+myth_types = { path = "crates/types" }
+myth_constants = { path = "crates/constants" }
+
+# ssz
+r_ssz = { git = "https://github.com/Soubhik-10/r_ssz", branch = "master" }
+
+# alloy
+alloy-primitives = "1.0.9"
