@@ -1,0 +1,26 @@
+name: no_std_check
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  no-std-build:
+    name: Check no_std build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Install Rust with no_std target
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          target: thumbv7em-none-eabihf
+          override: true
+
+      - name: Build without std
+        run: cargo build --target thumbv7em-none-eabihf --no-default-features
