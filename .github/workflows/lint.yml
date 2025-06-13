@@ -10,14 +10,15 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Install Rust toolchain
+      - name: Install nightly Rust toolchain
         uses: actions-rs/toolchain@v1
         with:
-          toolchain: stable
-          components: clippy, rustfmt
+          toolchain: nightly
+          components: rustfmt, clippy
+          override: true
 
-      - name: Run rustfmt (check formatting)
-        run: cargo fmt -- --check
+      - name: Run rustfmt (nightly check)
+        run: cargo +nightly fmt -- --check
 
-      - name: Run Clippy
-        run: cargo clippy --all-targets --all-features -- -D warnings
+      - name: Run Clippy (deny warnings)
+        run: cargo +nightly clippy --all-targets --all-features -- -D warnings
