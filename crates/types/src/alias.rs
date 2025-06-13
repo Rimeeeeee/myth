@@ -7,7 +7,7 @@ use alloy_primitives::{B256, FixedBytes};
 /// See: <https://github.com/ethereum/consensus-specs/blob/dev/specs/phase0/beacon-chain.md#custom-types>
 ///
 /// |------------------------------------------------------------------------|
-/// | Type            | SSZ equivalent    | Description                         |
+/// | Type            | SSZ equivalent    | Description                      |
 /// |-----------------|----------------|-------------------------------------|
 /// | `Slot`          | `u64`          | A slot number                       |
 /// | `Epoch`         | `u64`          | An epoch number                     |
