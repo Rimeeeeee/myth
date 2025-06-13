@@ -4,6 +4,6 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-r_ssz.workspace = true
 
 alloy-primitives.workspace = true
+r_ssz.workspace = true
