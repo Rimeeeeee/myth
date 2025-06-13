@@ -8,7 +8,6 @@ members = ["crates/*"]
 resolver = "2"
 
 [workspace.dependencies]
-
 # alloy
 alloy-primitives = "1.0.9"
 
