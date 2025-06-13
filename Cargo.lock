@@ -718,6 +718,10 @@ version = "0.1.0"
 [[package]]
 name = "myth_constants"
 version = "0.1.0"
+dependencies = [
+ "alloy-primitives",
+ "myth_types",
+]
 
 [[package]]
 name = "myth_types"
