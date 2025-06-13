@@ -8,12 +8,12 @@ members = ["crates/*"]
 resolver = "2"
 
 [workspace.dependencies]
+# alloy
+alloy-primitives = "1.0.9"
+
 # myth
-myth_types = { path = "crates/types" }
 myth_constants = { path = "crates/constants" }
+myth_types = { path = "crates/types" }
 
 # ssz
 r_ssz = { git = "https://github.com/Soubhik-10/r_ssz", branch = "master" }
-
-# alloy
-alloy-primitives = "1.0.9"
