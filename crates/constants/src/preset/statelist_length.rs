@@ -1,6 +1,6 @@
 //! Statelist Length Constants
 
-use myth_types::Epoch;
+use crate::Epoch;
 
 pub const EPOCHS_PER_HISTORICAL_VECTOR: Epoch = 1 << 16; // 65,536 epochs
 pub const EPOCHS_PER_SLASHINGS_VECTOR: Epoch = 1 << 13; // 8,192 epochs

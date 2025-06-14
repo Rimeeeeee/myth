@@ -2,7 +2,7 @@
 
 use alloy_primitives::FixedBytes;
 
-use crate::alias::{
+use myth_constants::alias::{
     BLSPubkey, BLSSignature, CommitteeIndex, Domain, Epoch, Gwei, Hash32, Root, Slot,
     ValidatorIndex, Version,
 };

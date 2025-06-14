@@ -2,7 +2,7 @@
 //!
 //! Constants related to Eth1 follow distance and validator time-based transitions.
 
-use myth_types::{Epoch, Slot};
+use crate::{Epoch, Slot};
 
 pub const SECONDS_PER_SLOT: Slot = 12; // seconds
 pub const SECONDS_PER_ETH1_BLOCK: u64 = 14; // seconds

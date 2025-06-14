@@ -1,7 +1,7 @@
 //! Domain constants
 
+use crate::DomainType;
 use alloy_primitives::FixedBytes;
-use myth_types::DomainType;
 
 pub const DOMAIN_BEACON_PROPOSER: DomainType = FixedBytes([0x00, 0x00, 0x00, 0x00]);
 pub const DOMAIN_BEACON_ATTESTER: DomainType = FixedBytes([0x01, 0x00, 0x00, 0x00]);

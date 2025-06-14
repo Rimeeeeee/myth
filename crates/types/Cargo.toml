@@ -7,3 +7,4 @@ edition = "2024"
 
 alloy-primitives.workspace = true
 r_ssz.workspace = true
+myth_constants.workspace = true

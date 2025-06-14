@@ -1,6 +1,6 @@
 //! Misc Constants
 
-use myth_types::{Epoch, Slot};
+use crate::{Epoch, Slot};
 
 pub const UINT64_MAX: u64 = u64::MAX;
 pub const UINT64_MAX_SQRT: u64 = 4_294_967_295;
