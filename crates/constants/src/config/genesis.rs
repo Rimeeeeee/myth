@@ -2,8 +2,8 @@
 //!
 //! Constants related to the initialization of the beacon chain.
 
+use crate::Version;
 use alloy_primitives::FixedBytes;
-use myth_types::Version;
 
 pub const MIN_GENESIS_ACTIVE_VALIDATOR_COUNT: u64 = 1 << 14; // 16,384
 pub const MIN_GENESIS_TIME: u64 = 1606824000; // Dec 1, 2020, 12pm UTC

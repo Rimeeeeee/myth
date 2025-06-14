@@ -8,5 +8,3 @@ edition = "2024"
 # alloy
 alloy-primitives.workspace = true
 
-# myth
-myth_types.workspace = true

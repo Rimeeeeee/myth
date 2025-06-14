@@ -2,7 +2,7 @@
 //!
 //! Thresholds and limits for validator activation, exit, and churn.
 
-use myth_types::Gwei;
+use crate::Gwei;
 
 pub const EJECTION_BALANCE: Gwei = 16_000_000_000; // 2^4 * 10^9 Gwei
 pub const MIN_PER_EPOCH_CHURN_LIMIT: u64 = 1 << 2; // 4

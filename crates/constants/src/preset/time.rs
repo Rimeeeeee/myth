@@ -2,7 +2,7 @@
 //!
 //! Constants representing durations in slots or epochs for various consensus operations.
 
-use myth_types::{Epoch, Slot};
+use crate::{Epoch, Slot};
 
 pub const MIN_ATTESTATION_INCLUSION_DELAY: Slot = 1; // slots
 pub const SLOTS_PER_EPOCH: Slot = 1 << 5; // 32 slots
