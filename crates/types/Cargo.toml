@@ -6,5 +6,5 @@ edition = "2024"
 [dependencies]
 
 alloy-primitives.workspace = true
-r_ssz.workspace = true
 myth_constants.workspace = true
+r_ssz.workspace = true
