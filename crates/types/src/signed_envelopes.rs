@@ -6,7 +6,6 @@ use crate::{
 use myth_constants::BLSSignature;
 ///
 /// See: <https://github.com/ethereum/consensus-specs/blob/dev/specs/phase0/beacon-chain.md#signed-envelopes>
-
 #[derive(Debug)]
 pub struct SignedVoluntaryExit {
     pub message: VoluntaryExit,

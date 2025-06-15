@@ -15,7 +15,7 @@ use myth_constants::{
 };
 ///
 /// See: <https://github.com/ethereum/consensus-specs/blob/dev/specs/phase0/beacon-chain.md#beacon-blocks>
-
+///
 #[derive(Debug)]
 pub struct BeaconBlockBody {
     pub randao_reveal: BLSSignature,

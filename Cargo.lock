@@ -902,8 +902,9 @@ checksum = "74765f6d916ee2faa39bc8e68e4f3ed8949b48cccdac59983d287a7cb71ce9c5"
 
 [[package]]
 name = "r_ssz"
-version = "0.0.1"
-source = "git+https://github.com/Soubhik-10/r_ssz?branch=master#41c09aaf6d2914c210d94cada884ca259cf23ec2"
+version = "0.1.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e46484d1421601649c7c002a5205c6f2cb046513f47c97e49856c9275439f711"
 dependencies = [
  "alloy-primitives",
  "sha2",

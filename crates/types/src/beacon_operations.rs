@@ -5,10 +5,14 @@ use crate::{
     signed_envelopes::SignedBeaconBlockHeader,
 };
 use alloy_primitives::FixedBytes;
-use myth_constants::{BLSSignature, Epoch, ValidatorIndex, preset::MAX_VALIDATORS_PER_COMMITTEE};
-use r_ssz::BitList;
+use myth_constants::{
+    BLSSignature, Epoch, ValidatorIndex, misc::DEPOSIT_CONTRACT_TREE_DEPTH,
+    preset::MAX_VALIDATORS_PER_COMMITTEE,
+};
+use r_ssz::{BitList, fixed_vectors::FixedVector};
 ///
 /// See: <https://github.com/ethereum/consensus-specs/blob/dev/specs/phase0/beacon-chain.md#beacon-operations>
+const TOTAL_DEPTH: usize = DEPOSIT_CONTRACT_TREE_DEPTH as usize + 1;
 
 #[derive(Debug)]
 pub struct ProposerSlashing {
@@ -31,8 +35,7 @@ pub struct Attestation {
 
 #[derive(Debug)]
 pub struct Deposit {
-    pub proof: Vec<FixedBytes<32>>, /* TODO -> Convert to Vector[Bytes32,
-                                     * DEPOSIT_CONTRACT_TREE_DEPTH + 1] */
+    pub proof: FixedVector<FixedBytes<32>, TOTAL_DEPTH>,
     pub data: DepositData,
 }
 

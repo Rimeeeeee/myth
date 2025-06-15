@@ -2,14 +2,16 @@
 
 use alloy_primitives::FixedBytes;
 
-use myth_constants::alias::{
-    BLSPubkey, BLSSignature, CommitteeIndex, Domain, Epoch, Gwei, Hash32, Root, Slot,
-    ValidatorIndex, Version,
+use myth_constants::{
+    alias::{
+        BLSPubkey, BLSSignature, CommitteeIndex, Domain, Epoch, Gwei, Hash32, Root, Slot,
+        ValidatorIndex, Version,
+    },
+    preset::{MAX_VALIDATORS_PER_COMMITTEE, SLOTS_PER_HISTORICAL_ROOT},
 };
-use r_ssz::composite::BitList;
+use r_ssz::{composite::BitList, fixed_vectors::FixedVector};
 ///
 /// See: <https://github.com/ethereum/consensus-specs/blob/dev/specs/phase0/beacon-chain.md#misc-dependencies>
-
 #[derive(Debug)]
 pub struct Fork {
     pub previous_version: Version,
@@ -52,14 +54,14 @@ pub struct AttestationData {
 
 #[derive(Debug)]
 pub struct IndexedAttestation {
-    pub attesting_indices: [ValidatorIndex; 2048],
+    pub attesting_indices: [ValidatorIndex; MAX_VALIDATORS_PER_COMMITTEE as usize],
     pub data: AttestationData,
     pub signature: BLSSignature,
 }
 
 #[derive(Debug)]
 pub struct PendingAttestation {
-    pub aggregation_bits: BitList<2048>,
+    pub aggregation_bits: BitList<{ MAX_VALIDATORS_PER_COMMITTEE as usize }>,
     pub data: AttestationData,
     pub inclusion_delay: Slot,
     pub proposer_index: ValidatorIndex,
@@ -74,8 +76,8 @@ pub struct Eth1Data {
 
 #[derive(Debug)]
 pub struct HistoricalBatch {
-    pub block_roots: Vec<Root>, //TODO : convert to ->Vector[Root, SLOTS_PER_HISTORICAL_ROOT]
-    pub state_roots: Vec<Root>, //TODO : convert to ->Vector[Root, SLOTS_PER_HISTORICAL_ROOT]
+    pub block_roots: FixedVector<Root, { SLOTS_PER_HISTORICAL_ROOT as usize }>,
+    pub state_roots: FixedVector<Root, { SLOTS_PER_HISTORICAL_ROOT as usize }>,
 }
 
 #[derive(Debug)]
