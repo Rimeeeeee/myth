@@ -16,4 +16,4 @@ myth_constants = { path = "crates/constants" }
 myth_types = { path = "crates/types" }
 
 # ssz
-r_ssz = { git = "https://github.com/Soubhik-10/r_ssz", branch = "master" }
+r_ssz = "0.1.2"
